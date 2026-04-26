@@ -1,0 +1,69 @@
+<!doctype html>
+<!--
+  Component: Deck Separator — Mouth bleeds off-edge (L4)
+  Layout: Full-bleed Ultramarine. Massive Electric Green mouth bleeds off the right edge
+  (~30-40% past the slide bound). White Modern Era headline left ~20% from edge.
+  Confidence move; signals scale.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OGeeZ — Separator (Mouth Bleed)</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      background: var(--ogz-electric-ultramarine);
+      font-family: var(--ogz-font-en);
+      color: var(--ogz-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .title-block {
+      position: absolute;
+      left: 384px; /* ~20% from edge */
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 700px;
+      z-index: 2;
+    }
+    .headline {
+      font-size: var(--ogz-fs-display);
+      line-height: var(--ogz-lh-tight);
+      font-weight: var(--ogz-fw-black);
+      margin: 0 0 var(--ogz-space-lg);
+    }
+    .subhead {
+      font-size: var(--ogz-fs-h3);
+      font-weight: var(--ogz-fw-regular);
+      margin: 0;
+    }
+    .mouth-bleed {
+      position: absolute;
+      right: -200px;          /* 200px past the slide edge — the bleed */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1400px;
+      height: auto;
+      z-index: 1;
+    }
+    .footer {
+      position: absolute;
+      left: var(--ogz-deck-edge-margin);
+      bottom: var(--ogz-deck-footer-margin);
+      font-size: var(--ogz-fs-caption);
+      color: var(--ogz-white);
+    }
+  </style>
+</head>
+<body data-context="house">
+  <img class="mouth-bleed" src="../assets/mouth/png/Mouths-01.png" alt="OGeeZ mouth">
+  <div class="title-block">
+    <h1 class="headline">Separator<br>Headline</h1>
+    <p class="subhead">Separator/description/title</p>
+  </div>
+  <div class="footer">Presentation Title — October 20, 2023</div>
+</body>
+</html>

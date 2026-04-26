@@ -1,0 +1,31 @@
+# OS clutter
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output (none expected, but reserved)
+/dist/
+/build/
+
+# Examples — keep source examples but ignore exports
+/examples/exports/
+
+# Local previews / screenshots from validation runs
+*.tmp.png
+
+# Environment overrides
+.env
+.env.local

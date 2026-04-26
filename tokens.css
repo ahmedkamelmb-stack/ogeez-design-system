@@ -1,0 +1,193 @@
+/*
+ * OGeeZ Studios — Design Tokens (CSS Variables)
+ * v0.1.0 · 2026-04-27
+ * Mirror of tokens.json. Edit tokens.json first, then regenerate this file.
+ *
+ * RULE: Pick the right context BEFORE generating any artifact.
+ *   - For OGeeZ-self artifacts (decks, social, stationery, recruiting) → use --house-* tokens
+ *   - For client on-camera work → use --oncamera-{corporate|consumer|heritage}-* tokens
+ *   - Never mix the two.
+ *
+ * HEX values are approximated from the master Brand Identity kit.
+ * Verify with Chubby Studio master swatch before final production print.
+ */
+
+:root {
+  /* ──────────────────────────────────────────────────────── */
+  /* HOUSE PALETTE (deck wrapping, social, stationery, etc.)   */
+  /* ──────────────────────────────────────────────────────── */
+  --ogz-electric-green: #33EB05;
+  --ogz-electric-ultramarine: #3349EB;
+  --ogz-epink: #E602BB;
+  --ogz-black: #000000;
+  --ogz-white: #FFFFFF;
+
+  /* House secondary (also the mouth-color library) */
+  --ogz-orange:    #F59A1F;
+  --ogz-mint:      #28D9A8;
+  --ogz-sky-blue:  #1FBDFF;
+  --ogz-olive:     #C4B560;
+  --ogz-yellow:    #FFD500;
+  --ogz-coral:     #F5BEB7;
+  --ogz-cream:     #E8D6A0;
+  --ogz-grey:      #BFBFBF;
+
+  /* Fixed accents */
+  --ogz-mouth-tooth-magenta: #E602BB; /* ALWAYS magenta on the highlighted tooth, even on Epink mouth */
+  --ogz-mouth-tongue-red: #E33A1F;
+  --ogz-mouth-void-black: #000000;
+  --ogz-mouth-teeth-white: #FFFFFF;
+
+  /* ──────────────────────────────────────────────────────── */
+  /* ON-CAMERA: CORPORATE TIER                                  */
+  /* (banks, government, B2B, institutional)                    */
+  /* ──────────────────────────────────────────────────────── */
+  --oncamera-corporate-base: #000000;
+  --oncamera-corporate-accent: #7A6A55;
+  --oncamera-corporate-neutral-1: #F5F1EA;
+  --oncamera-corporate-neutral-2: #1F1B17;
+
+  /* ──────────────────────────────────────────────────────── */
+  /* ON-CAMERA: CONSUMER TIER                                   */
+  /* (F&B, telco, retail, consumer pop)                         */
+  /* ──────────────────────────────────────────────────────── */
+  --oncamera-consumer-primary: #FF3D2E;
+  --oncamera-consumer-secondary: #FFD500;
+  --oncamera-consumer-tertiary: #1FBDFF;
+  --oncamera-consumer-accent: #28D9A8;
+
+  /* ──────────────────────────────────────────────────────── */
+  /* ON-CAMERA: HERITAGE TIER                                   */
+  /* (national days, anniversaries, heritage moments)           */
+  /* ──────────────────────────────────────────────────────── */
+  --oncamera-heritage-sand: #D4B890;
+  --oncamera-heritage-ochre: #C28D34;
+  --oncamera-heritage-deep-red: #7A1F1F;
+  --oncamera-heritage-olive: #6B6B3A;
+  --oncamera-heritage-ink: #1A1410;
+
+  /* ──────────────────────────────────────────────────────── */
+  /* TYPOGRAPHY                                                 */
+  /* ──────────────────────────────────────────────────────── */
+  --ogz-font-en: "Modern Era", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ogz-font-ar: "Neue Frutiger Arabic", Tahoma, "Geeza Pro", Arial, sans-serif;
+  --ogz-font-mono: "Modern Era Mono", "SF Mono", Menlo, monospace;
+
+  /* Type scale (px values) */
+  --ogz-fs-display: 72px;
+  --ogz-fs-h1: 48px;
+  --ogz-fs-h2: 32px;
+  --ogz-fs-h3: 24px;
+  --ogz-fs-body-lg: 18px;
+  --ogz-fs-body: 16px;
+  --ogz-fs-caption: 12px;
+  --ogz-fs-label-cap: 14px;
+
+  /* Line heights */
+  --ogz-lh-tight: 1.0;
+  --ogz-lh-snug: 1.1;
+  --ogz-lh-normal: 1.5;
+
+  /* Font weights */
+  --ogz-fw-light: 300;
+  --ogz-fw-regular: 400;
+  --ogz-fw-medium: 500;
+  --ogz-fw-bold: 700;
+  --ogz-fw-extrabold: 800;
+  --ogz-fw-black: 900;
+
+  /* Tracking */
+  --ogz-tracking-caps: 0.06em;
+
+  /* ──────────────────────────────────────────────────────── */
+  /* SPACING (8-point system)                                   */
+  /* ──────────────────────────────────────────────────────── */
+  --ogz-space-xs: 4px;
+  --ogz-space-sm: 8px;
+  --ogz-space-md: 16px;
+  --ogz-space-lg: 24px;
+  --ogz-space-xl: 40px;
+  --ogz-space-2xl: 64px;
+  --ogz-space-3xl: 96px;
+
+  /* Slide-specific */
+  --ogz-deck-edge-margin: 64px;
+  --ogz-deck-footer-margin: 32px;
+
+  /* ──────────────────────────────────────────────────────── */
+  /* MOUTH (parametric)                                         */
+  /* ──────────────────────────────────────────────────────── */
+  /* Use --ogz-mouth-color to color-shift the mouth lip.        */
+  /* The fixed accents (magenta tooth, red tongue, etc.) are    */
+  /* baked into the SVG and DO NOT change with --ogz-mouth-color */
+  --ogz-mouth-color: var(--ogz-electric-green);   /* default */
+  --ogz-mouth-shadow-color: transparent;          /* set for duotone-shadow treatment */
+  --ogz-mouth-shadow-offset-x: 0;
+  --ogz-mouth-shadow-offset-y: 0;
+
+  /* ──────────────────────────────────────────────────────── */
+  /* RADII / BORDERS / SHADOWS                                  */
+  /* ──────────────────────────────────────────────────────── */
+  --ogz-radius-none: 0;
+  --ogz-radius-sm: 2px;
+  --ogz-radius-md: 4px;
+  --ogz-radius-lg: 8px;
+
+  /* Logo-bound: the wordmark's green bubble has rounded corners */
+  --ogz-radius-bubble: 12px;
+
+  /* No global box-shadows. Drop shadow lives inside the master logo asset only. */
+
+  /* ──────────────────────────────────────────────────────── */
+  /* CHART PALETTES                                             */
+  /* ──────────────────────────────────────────────────────── */
+  --ogz-chart-on-coral: var(--ogz-black), #CFD8E8, var(--ogz-epink), #9C8DA0, #D62FCF;
+  --ogz-chart-on-skyblue: var(--ogz-black), #CFE2D8, #A88B62, #6F4F1F, #B9A56A;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* CONTEXT-SCOPED OVERRIDES                                       */
+/* Apply to body or a wrapping element to switch palette context. */
+/* ──────────────────────────────────────────────────────────────  */
+
+[data-context="house"] {
+  --ogz-bg: var(--ogz-white);
+  --ogz-fg: var(--ogz-black);
+  --ogz-accent: var(--ogz-electric-green);
+}
+
+[data-context="oncamera-corporate"] {
+  --ogz-bg: var(--oncamera-corporate-neutral-1);
+  --ogz-fg: var(--oncamera-corporate-base);
+  --ogz-accent: var(--oncamera-corporate-accent);
+}
+
+[data-context="oncamera-consumer"] {
+  --ogz-bg: var(--ogz-white);
+  --ogz-fg: var(--ogz-black);
+  --ogz-accent: var(--oncamera-consumer-primary);
+}
+
+[data-context="oncamera-heritage"] {
+  --ogz-bg: var(--oncamera-heritage-sand);
+  --ogz-fg: var(--oncamera-heritage-ink);
+  --ogz-accent: var(--oncamera-heritage-deep-red);
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* BASE TYPESETTING HELPERS                                       */
+/* ──────────────────────────────────────────────────────────────  */
+
+.ogz-en  { font-family: var(--ogz-font-en); }
+.ogz-ar  { font-family: var(--ogz-font-ar); direction: rtl; }
+.ogz-display { font-size: var(--ogz-fs-display); line-height: var(--ogz-lh-tight); font-weight: var(--ogz-fw-black); }
+.ogz-h1  { font-size: var(--ogz-fs-h1); line-height: var(--ogz-lh-snug); font-weight: var(--ogz-fw-bold); }
+.ogz-h2  { font-size: var(--ogz-fs-h2); line-height: 1.15; font-weight: var(--ogz-fw-bold); }
+.ogz-body { font-size: var(--ogz-fs-body); line-height: var(--ogz-lh-normal); font-weight: var(--ogz-fw-regular); }
+.ogz-caps {
+  text-transform: uppercase;
+  letter-spacing: var(--ogz-tracking-caps);
+  font-weight: var(--ogz-fw-medium);
+  font-size: var(--ogz-fs-label-cap);
+}
+.ogz-caption { font-size: var(--ogz-fs-caption); line-height: 1.4; font-weight: var(--ogz-fw-regular); }

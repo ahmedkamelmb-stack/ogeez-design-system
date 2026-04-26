@@ -1,0 +1,65 @@
+<!doctype html>
+<!--
+  Component: Deck Headline + Body (L2)
+  Layout: Full Electric Green flood. Small mouth top-left. Headline + body in black. Footer bottom-left.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OGeeZ — Headline + Body</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      background: var(--ogz-electric-green); /* swap to any house secondary for variant */
+      font-family: var(--ogz-font-en);
+      color: var(--ogz-black);
+      position: relative;
+      overflow: hidden;
+      padding: var(--ogz-deck-edge-margin);
+      box-sizing: border-box;
+    }
+    .mouth-mark {
+      width: 96px;
+      height: auto;
+    }
+    .content {
+      max-width: 1100px;
+      margin-top: 240px;
+    }
+    .headline {
+      font-size: var(--ogz-fs-h1);
+      line-height: var(--ogz-lh-snug);
+      font-weight: var(--ogz-fw-bold);
+      margin: 0 0 var(--ogz-space-lg);
+    }
+    .body {
+      font-size: var(--ogz-fs-body-lg);
+      line-height: 1.6;
+      font-weight: var(--ogz-fw-regular);
+      margin: 0;
+      max-width: 1000px;
+    }
+    .footer {
+      position: absolute;
+      left: var(--ogz-deck-edge-margin);
+      bottom: var(--ogz-deck-footer-margin);
+      font-size: var(--ogz-fs-caption);
+    }
+  </style>
+</head>
+<body data-context="house">
+  <img class="mouth-mark" src="../assets/mouth/png/Mouths-01.png" alt="OGeeZ mouth">
+  <div class="content">
+    <h1 class="headline">Headline</h1>
+    <p class="body">
+      Body copy in Modern Era Regular. Sentences carry the idea; the frame carries
+      the volume. Keep it specific over impressive — concrete nouns over abstract
+      adjectives. One level of hierarchy per slide.
+    </p>
+  </div>
+  <div class="footer">Presentation Title — October 20, 2023</div>
+</body>
+</html>

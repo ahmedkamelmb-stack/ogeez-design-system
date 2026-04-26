@@ -1,0 +1,123 @@
+<!doctype html>
+<!--
+  Component: Deck Data Slide — Pastel ground (L5)
+  Layout: Soft secondary palette flood (coral here). Small mouth top-left.
+  Headline + body in left third. 5-color bar chart in right two-thirds.
+  Chart palette is tonally tuned to the slide background.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OGeeZ — Data Slide (Pastel)</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      background: var(--ogz-coral);
+      font-family: var(--ogz-font-en);
+      color: var(--ogz-black);
+      position: relative;
+      overflow: hidden;
+      padding: var(--ogz-deck-edge-margin);
+      box-sizing: border-box;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .top-row { display: flex; align-items: center; }
+    .mouth-mark { width: 96px; height: auto; }
+    .body-row {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: var(--ogz-space-3xl);
+      align-items: center;
+    }
+    .text-col h1 {
+      font-size: var(--ogz-fs-h2);
+      font-weight: var(--ogz-fw-bold);
+      margin: 0 0 var(--ogz-space-md);
+    }
+    .text-col p {
+      font-size: var(--ogz-fs-body);
+      line-height: var(--ogz-lh-normal);
+      margin: 0;
+    }
+    .chart-col {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--ogz-space-xs);
+      height: 480px;
+      position: relative;
+    }
+    /* Y-axis label rail */
+    .y-axis {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      height: 100%;
+      padding-bottom: 24px;
+      font-size: var(--ogz-fs-h3);
+      font-weight: var(--ogz-fw-bold);
+    }
+    .bars {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--ogz-space-md);
+      flex: 1;
+      height: 100%;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--ogz-black);
+      position: relative;
+    }
+    .group { display: flex; gap: var(--ogz-space-xs); align-items: flex-end; flex: 1; }
+    .bar { flex: 1; min-width: 28px; }
+    /* Chart palette — on coral ground (per tokens.json) */
+    .bar.c1 { background: var(--ogz-black); }
+    .bar.c2 { background: #CFD8E8; }
+    .bar.c3 { background: var(--ogz-epink); }
+    .bar.c4 { background: #9C8DA0; }
+    .bar.c5 { background: #D62FCF; }
+    .footer {
+      font-size: var(--ogz-fs-caption);
+    }
+  </style>
+</head>
+<body data-context="house">
+  <div class="top-row">
+    <img class="mouth-mark" src="../assets/mouth/png/Mouths-01.png" alt="OGeeZ mouth">
+  </div>
+  <div class="body-row">
+    <div class="text-col">
+      <h1>Headline</h1>
+      <p>
+        Body copy in Modern Era Regular. Specific over impressive — concrete nouns,
+        not abstract adjectives. Charts use a 5-color palette tuned to the slide
+        background, not a fixed deck palette.
+      </p>
+    </div>
+    <div class="chart-col">
+      <div class="y-axis">
+        <span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span>
+      </div>
+      <div class="bars">
+        <div class="group">
+          <div class="bar c1" style="height: 22%"></div>
+          <div class="bar c2" style="height: 42%"></div>
+          <div class="bar c3" style="height: 30%"></div>
+          <div class="bar c4" style="height: 38%"></div>
+          <div class="bar c5" style="height: 50%"></div>
+        </div>
+        <div class="group">
+          <div class="bar c1" style="height: 54%"></div>
+          <div class="bar c2" style="height: 58%"></div>
+          <div class="bar c3" style="height: 88%"></div>
+          <div class="bar c4" style="height: 78%"></div>
+          <div class="bar c5" style="height: 82%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">Presentation Title — October 20, 2023</div>
+</body>
+</html>

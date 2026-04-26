@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+  Component: Co-branding × Mark
+  Pattern: OGZ × [Partner Brand]. Green × multiplier between marks.
+  Used on partnership announcements, BTS templates, sponsored work.
+  Source example: OGZ × Coca-Cola (Instagram template).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OGeeZ — Co-branding</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      background: var(--ogz-black); /* swap to BTS photo for documentary mode */
+      font-family: var(--ogz-font-en);
+      color: var(--ogz-white);
+      position: relative;
+      overflow: hidden;
+      padding: var(--ogz-deck-edge-margin);
+      box-sizing: border-box;
+    }
+    .title {
+      font-size: 96px;
+      font-weight: var(--ogz-fw-black);
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      color: var(--ogz-electric-green);
+      margin: 0 0 var(--ogz-space-2xl);
+      max-width: 800px;
+      text-transform: uppercase;
+    }
+    .lockup {
+      display: flex;
+      align-items: center;
+      gap: var(--ogz-space-xl);
+      position: absolute;
+      right: var(--ogz-deck-edge-margin);
+      bottom: var(--ogz-deck-edge-margin);
+    }
+    .ogz-mark {
+      height: 80px;
+      width: auto;
+    }
+    .x-mark {
+      font-size: 64px;
+      font-weight: var(--ogz-fw-black);
+      color: var(--ogz-electric-green);
+    }
+    .partner-mark {
+      height: 60px;
+      width: auto;
+      /* Partner logo provided per project. Maintain visual parity in optical weight. */
+    }
+  </style>
+</head>
+<body data-context="house">
+  <h1 class="title">Behind the Scenes</h1>
+  <div class="lockup">
+    <img class="ogz-mark" src="../assets/logo/png/ON BLACK BGOGZ.png" alt="OGZ Studios">
+    <span class="x-mark">×</span>
+    <span class="partner-mark" aria-label="Partner logo placeholder">[PARTNER]</span>
+  </div>
+</body>
+</html>

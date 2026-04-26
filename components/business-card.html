@@ -1,0 +1,96 @@
+<!doctype html>
+<!--
+  Component: Business Card — Front
+  Format: 85x55mm landscape. Mouth right ~50%. ALL-CAPS name + role left.
+  Address + phone bottom-left. Modern Era Black / Regular / Medium ladder.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OGeeZ — Business Card</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    /* Card at 4x scale for screen readability — print at 85x55mm */
+    body {
+      margin: 0;
+      padding: 32px;
+      background: #efefef;
+      font-family: var(--ogz-font-en);
+    }
+    .card {
+      width: 1020px;   /* 85mm at ~12px/mm */
+      height: 660px;   /* 55mm at ~12px/mm */
+      background: var(--ogz-white);
+      box-sizing: border-box;
+      padding: 56px 64px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--ogz-space-xl);
+      align-items: start;
+    }
+    .name-block {}
+    .first-name {
+      font-size: 64px;
+      line-height: 1.0;
+      font-weight: var(--ogz-fw-black);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .last-name {
+      font-size: 64px;
+      line-height: 1.0;
+      font-weight: var(--ogz-fw-regular);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .role {
+      font-size: 22px;
+      font-weight: var(--ogz-fw-medium);
+      letter-spacing: var(--ogz-tracking-caps);
+      text-transform: uppercase;
+      margin: var(--ogz-space-lg) 0 0;
+    }
+    .mouth {
+      width: 110%;
+      max-width: 600px;
+      height: auto;
+      justify-self: end;
+      margin-right: -64px;
+      margin-top: -32px;
+    }
+    .footer {
+      position: absolute;
+      left: 64px;
+      bottom: 56px;
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: var(--ogz-space-2xl);
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body data-context="house">
+  <div class="card">
+    <div class="name-block">
+      <p class="first-name">Alhareth</p>
+      <p class="last-name">Albelaihed</p>
+      <p class="role">Managing Partner</p>
+    </div>
+    <img class="mouth" src="../assets/mouth/png/Mouths-01.png" alt="OGeeZ mouth">
+    <div class="footer">
+      <div>
+        Altawaan Dist, Riyadh,<br>Saudi Arabia
+      </div>
+      <div>
+        +966 581555345<br>Alhareth@ogzstudios.com
+      </div>
+    </div>
+  </div>
+</body>
+</html>

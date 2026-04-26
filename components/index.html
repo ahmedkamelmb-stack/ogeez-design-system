@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  Component Index — preview every primitive in one place.
+  Open this file in a browser to see all 8 components rendered.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OGeeZ — Component Index</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 32px;
+      background: #fafafa;
+      font-family: var(--ogz-font-en), system-ui, sans-serif;
+    }
+    h1 { margin: 0 0 24px; font-weight: 900; font-size: 32px; }
+    p.lede { margin: 0 0 32px; max-width: 720px; color: #555; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .tile {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 16px;
+    }
+    .tile h2 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+    .tile p { margin: 0 0 12px; color: #666; font-size: 13px; line-height: 1.4; }
+    iframe {
+      width: 100%;
+      height: 320px;
+      border: 1px solid #eee;
+      transform-origin: 0 0;
+      transform: scale(0.5);
+      width: 200%;
+      height: 640px;
+    }
+    .tile-narrow iframe { transform: scale(0.4); width: 250%; height: 800px; }
+  </style>
+</head>
+<body>
+  <h1>OGeeZ Design System — Components</h1>
+  <p class="lede">
+    Eight HTML primitives demonstrating token usage. Clone these for new artifacts —
+    Claude Design will read both the tokens (json + css) and these components to
+    learn the brand's visual language. Update tokens.json first when shifting palette
+    or type; these files cascade automatically via CSS variables.
+  </p>
+
+  <div class="grid">
+    <div class="tile">
+      <h2>L1 — Deck Cover</h2>
+      <p>White bg, mouth right ~45% (hero), title left, no wordmark. Mouth carries identity.</p>
+      <iframe src="deck-cover.html"></iframe>
+    </div>
+    <div class="tile">
+      <h2>L2 — Headline + Body</h2>
+      <p>Full Electric Green flood, small mouth top-left, headline + body in black.</p>
+      <iframe src="deck-headline-body.html"></iframe>
+    </div>
+    <div class="tile">
+      <h2>L4 — Separator (Mouth Bleed)</h2>
+      <p>Ultramarine flood, huge green mouth bleeding off right edge, white headline left.</p>
+      <iframe src="deck-separator-mouth-bleed.html"></iframe>
+    </div>
+    <div class="tile">
+      <h2>L6 — Separator (Duotone Shadow)</h2>
+      <p>Mint flood, Epink mouth with green offset shadow trail. Static but kinetic.</p>
+      <iframe src="deck-separator-shadow.html"></iframe>
+    </div>
+    <div class="tile">
+      <h2>L5 — Data Slide (Pastel)</h2>
+      <p>Coral ground, mouth top-left, headline+body left, 5-color bar chart right tuned to bg.</p>
+      <iframe src="deck-data-pastel.html"></iframe>
+    </div>
+    <div class="tile">
+      <h2>Social Square (1080×1080)</h2>
+      <p>House Instagram pattern. Color flood + mouth + bilingual sibling caption.</p>
+      <iframe src="social-square.html" style="height:540px;"></iframe>
+    </div>
+    <div class="tile">
+      <h2>Co-branding × Mark</h2>
+      <p>OGZ × [Partner]. Green × multiplier. Source: OGZ × Coca-Cola BTS template.</p>
+      <iframe src="social-co-branding.html"></iframe>
+    </div>
+    <div class="tile tile-narrow">
+      <h2>Business Card — Front</h2>
+      <p>Mouth right ~50%, ALL-CAPS name + role left, contact bottom-left.</p>
+      <iframe src="business-card.html"></iframe>
+    </div>
+    <div class="tile" style="grid-column: 1 / -1;">
+      <h2>Email Signature — Banner</h2>
+      <p>Lockup left, contact center, legal name + socials right.</p>
+      <iframe src="email-signature.html" style="height:200px;transform:scale(0.7);width:143%;height:300px;"></iframe>
+    </div>
+  </div>
+</body>
+</html>
