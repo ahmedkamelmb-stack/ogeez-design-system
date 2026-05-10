@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>L3 — Section Divider (Full-Bleed Photo)</title>
+<link rel="stylesheet" href="../01-tokens/tokens.css">
+<style>
+  /*
+    Layout L3 — Full-bleed section divider.
+    Photo edge to edge. Single caption-grey label in the lower-left.
+    No banner, no overlay, no scrim. The photo is the divider.
+  */
+
+  body {
+    margin: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-latin);
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.5);
+    transform-origin: center;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide__photo-placeholder {
+    position: absolute;
+    inset: 0;
+    background: var(--color-primitive-slate);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primitive-paper);
+    font-family: var(--font-latin-mono);
+    font-size: 16px;
+    opacity: 0.85;
+  }
+
+  .slide__label {
+    position: absolute;
+    left: var(--slide-edge-margin);
+    bottom: var(--slide-footer-margin);
+    color: var(--color-primitive-paper);
+    font-family: var(--font-latin);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-h3);
+    letter-spacing: 0;
+    line-height: 1.1;
+    /* Subtle shadow to keep readable across photo brightness */
+    text-shadow: 0 1px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .slide__page {
+    position: absolute;
+    right: var(--slide-edge-margin);
+    bottom: var(--slide-footer-margin);
+    color: var(--color-primitive-paper);
+    font-family: var(--font-latin-mono);
+    font-size: var(--font-size-caption);
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.45);
+  }
+
+  .posture-tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="slide" data-context="house">
+    <span class="posture-tag">L3 · SECTION DIVIDER · full-bleed photo</span>
+
+    <img class="slide__photo"
+         src="../04-imagery/mood-references/02-cairo-corniche-dawn.png"
+         alt="Cairo Corniche at dawn"
+         onerror="this.style.display='none'">
+    <div class="slide__photo-placeholder">photo: Cairo Corniche at dawn — full bleed, no overlay</div>
+
+    <div class="slide__label">How we work.</div>
+    <div class="slide__page">04 / 24</div>
+  </div>
+</body>
+</html>

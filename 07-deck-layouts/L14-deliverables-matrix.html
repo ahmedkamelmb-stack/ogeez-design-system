@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>L14 — Deliverables Matrix</title>
+<link rel="stylesheet" href="../01-tokens/tokens.css">
+<style>
+  /*
+    Layout L14 — Deliverables matrix (n × m grid).
+    Density earns its place: the matrix IS the information.
+    Single signal color marks the items that ship in this scope.
+  */
+
+  body {
+    margin: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-latin);
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.5);
+    transform-origin: center;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    position: relative;
+    overflow: hidden;
+    padding: var(--slide-edge-margin);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: var(--space-12);
+  }
+
+  .slide__heading {
+    font-family: var(--font-latin);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-latin-snug);
+    margin: 0;
+  }
+
+  .slide__matrix {
+    align-self: center;
+    border-collapse: collapse;
+    width: 100%;
+    font-family: var(--font-latin);
+  }
+
+  .slide__matrix th, .slide__matrix td {
+    text-align: left;
+    padding: var(--space-4) var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--font-size-body-lg);
+    line-height: 1.4;
+  }
+
+  .slide__matrix th {
+    font-family: var(--font-latin-mono);
+    font-size: var(--font-size-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-fg-muted);
+    font-weight: var(--font-weight-medium);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-border-bold);
+  }
+
+  .slide__matrix td.included {
+    color: var(--color-signal);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .slide__matrix td.excluded {
+    color: var(--color-fg-subtle);
+  }
+
+  .slide__chrome {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    color: var(--color-fg-muted);
+    font-size: var(--font-size-caption);
+    font-family: var(--font-latin-mono);
+  }
+
+  .slide__chrome .center { text-align: center; }
+  .slide__chrome .right  { text-align: right; }
+
+  .posture-tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+  <div class="slide" data-context="house">
+    <span class="posture-tag">L14 · DELIVERABLES MATRIX · density earns its place</span>
+
+    <h2 class="slide__heading">Deliverables. <span style="color: var(--color-fg-muted); font-weight: 400;">In scope. Out of scope.</span></h2>
+
+    <table class="slide__matrix">
+      <thead>
+        <tr>
+          <th style="width: 30%;">Asset</th>
+          <th style="width: 20%;">Format</th>
+          <th style="width: 25%;">Variants</th>
+          <th style="width: 25%;">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hero film</td>
+          <td>16:9, 1:1, 9:16</td>
+          <td>EN, AR (Saudi)</td>
+          <td class="included">In scope</td>
+        </tr>
+        <tr>
+          <td>Cutdowns</td>
+          <td>30s, 15s, 6s</td>
+          <td>EN, AR (Saudi)</td>
+          <td class="included">In scope</td>
+        </tr>
+        <tr>
+          <td>Stills (motion-extracted)</td>
+          <td>JPG / PNG, master + crops</td>
+          <td>—</td>
+          <td class="included">In scope</td>
+        </tr>
+        <tr>
+          <td>OOH adaptation</td>
+          <td>Print + digital out-of-home</td>
+          <td>EN, AR</td>
+          <td class="included">In scope</td>
+        </tr>
+        <tr>
+          <td>Influencer toolkit</td>
+          <td>Vertical templates, music cleared</td>
+          <td>—</td>
+          <td class="excluded">Phase 2</td>
+        </tr>
+        <tr>
+          <td>Behind the scenes</td>
+          <td>Long-form + 30s teaser</td>
+          <td>EN</td>
+          <td class="excluded">Phase 2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slide__chrome">
+      <div>OGeez</div>
+      <div class="center">Attention, not volume.</div>
+      <div class="right">14 / 24</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>L_FILM — Festival Submission Cover (OGeez Presents)</title>
+<link rel="stylesheet" href="../01-tokens/tokens.css">
+<style>
+  /*
+    Layout L_FILM — Festival / theatrical cover.
+    Context: film. Austere. Black ground, white type.
+    NO house signals. The film is the signal. Per-film accent appears only in the sting.
+    A24-precedent: bespoke per-film artwork under fixed wordmark.
+  */
+
+  body {
+    margin: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-latin);
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.5);
+    transform-origin: center;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    position: relative;
+    overflow: hidden;
+    padding: var(--slide-edge-margin);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .slide__top { height: 0; }
+
+  .slide__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-6);
+  }
+
+  .slide__title-ar {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    font-size: 132px;
+    line-height: 1;
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+  }
+
+  .slide__title-en {
+    font-family: var(--font-latin);
+    font-size: 88px;
+    font-weight: var(--font-weight-black);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .slide__byline {
+    font-family: var(--font-latin);
+    font-size: var(--font-size-body-lg);
+    font-weight: var(--font-weight-light);
+    color: var(--color-fg-muted);
+    margin-top: var(--space-12);
+  }
+
+  .slide__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .slide__presents {
+    font-family: var(--font-latin-mono);
+    font-size: var(--font-size-caption);
+    color: var(--color-fg-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .posture-tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+  }
+</style>
+</head>
+<body>
+  <div class="slide" data-context="film">
+    <span class="posture-tag">L_FILM · FESTIVAL COVER · austere · zero signals</span>
+
+    <div class="slide__top"></div>
+
+    <div class="slide__center">
+      <h1 class="slide__title-ar">مابين</h1>
+      <h1 class="slide__title-en">Mabeen</h1>
+      <p class="slide__byline">a film by Ahmed Kamel</p>
+    </div>
+
+    <div class="slide__bottom">
+      <div class="slide__presents">OGeez Presents</div>
+    </div>
+  </div>
+</body>
+</html>

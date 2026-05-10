@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>L9 — Image Right</title>
+<link rel="stylesheet" href="../01-tokens/tokens.css">
+<style>
+  /*
+    Layout L9 — Image right, text left.
+    Half-and-half. Image carries half the work; text is restrained on the left.
+    No call-out boxes. No overlay on the image. Footer chrome present.
+  */
+
+  body {
+    margin: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-latin);
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.5);
+    transform-origin: center;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .slide__text {
+    padding: var(--space-24);
+    padding-bottom: var(--space-32);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-6);
+  }
+
+  .slide__eyebrow {
+    font-family: var(--font-latin-mono);
+    font-size: var(--font-size-caption);
+    color: var(--color-fg-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .slide__h1 {
+    font-family: var(--font-latin);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-latin-snug);
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .slide__body {
+    font-family: var(--font-latin);
+    font-size: var(--font-size-body-lg);
+    line-height: var(--line-height-latin-normal);
+    color: var(--color-fg-muted);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .slide__visual {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-primitive-stone);
+  }
+
+  .slide__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slide__photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-fg);
+    font-family: var(--font-latin-mono);
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  .slide__chrome {
+    position: absolute;
+    bottom: var(--slide-footer-margin);
+    left: var(--slide-edge-margin);
+    width: calc(50% - var(--slide-edge-margin) * 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    color: var(--color-fg-muted);
+    font-size: var(--font-size-caption);
+    font-family: var(--font-latin-mono);
+  }
+
+  .posture-tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+  <div class="slide" data-context="house">
+    <span class="posture-tag">L9 · IMAGE RIGHT · half-and-half</span>
+
+    <div class="slide__text">
+      <div class="slide__eyebrow">The discipline mark</div>
+      <h2 class="slide__h1">One hand, both surfaces.</h2>
+      <p class="slide__body">
+        The film discipline keeps the advertising honest.
+        The advertising tempo keeps the film moving.
+        The same hand signs both.
+      </p>
+    </div>
+
+    <div class="slide__visual">
+      <img src="../04-imagery/mood-references/04-clapper-discipline.png"
+           alt="Hand on clapperboard"
+           onerror="this.style.display='none'">
+      <div class="slide__photo-placeholder">photo: hand on clapperboard, electric-green sticker accent</div>
+    </div>
+
+    <div class="slide__chrome">
+      <div>OGeez</div>
+      <div>09 / 24</div>
+    </div>
+  </div>
+</body>
+</html>

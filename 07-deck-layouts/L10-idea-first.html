@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>L10 — Idea-First Opener</title>
+<link rel="stylesheet" href="../01-tokens/tokens.css">
+<style>
+  /*
+    Layout L10 — Repeat-client deck slide 1.
+    Posture: client.status=repeat → idea-first.
+    Slide 1 = the idea. One line. One image. NO studio chrome.
+    No wordmark, no positioning line, no page number — just the idea.
+  */
+
+  body {
+    margin: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-latin);
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.5);
+    transform-origin: center;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .slide__idea {
+    padding: var(--space-24);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-12);
+  }
+
+  .slide__idea-eyebrow {
+    font-family: var(--font-latin-mono);
+    font-size: var(--font-size-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-fg-muted);
+  }
+
+  .slide__idea-headline {
+    font-family: var(--font-latin);
+    font-size: 88px;
+    line-height: 0.95;
+    font-weight: var(--font-weight-black);
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  /* The single signal — Electric Green — earns its place by punctuating the negative-positive turn */
+  .slide__idea-headline .signal {
+    color: var(--color-signal);
+  }
+
+  .slide__idea-bilingual {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    font-size: 60px;
+    line-height: var(--line-height-arabic-tight);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-fg);
+  }
+
+  .slide__visual {
+    /* The image carries half the slide. Use a real photograph here. */
+    position: relative;
+    overflow: hidden;
+    background: var(--color-primitive-stone); /* placeholder while photo isn't loaded */
+  }
+
+  .slide__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Slot for the photo — replace src with one of the mood-references when a real shoot isn't available */
+  .slide__photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-fg);
+    font-family: var(--font-latin-mono);
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  /* No footer chrome on slide 1 (idea-first rule) */
+
+  .posture-tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    letter-spacing: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="slide" data-context="house" data-posture="repeat">
+
+    <span class="posture-tag">L10 · IDEA-FIRST · client.status=repeat · NO STUDIO CHROME</span>
+
+    <div class="slide__idea">
+      <div class="slide__idea-eyebrow">For Zain  ·  Shabab Revamp  ·  2026</div>
+      <h1 class="slide__idea-headline">
+        On your terms.<br>
+        <span class="signal">Literally.</span>
+      </h1>
+      <div class="slide__idea-bilingual">على كيفك. حرفياً.</div>
+    </div>
+
+    <div class="slide__visual">
+      <!-- Replace with a real photo. Suggested anchor: 04-imagery/mood-references/03-riyadh-modernist.png -->
+      <img src="../04-imagery/mood-references/03-riyadh-modernist.png" alt="Riyadh modernist exterior at golden hour" onerror="this.style.display='none'">
+      <div class="slide__photo-placeholder">photo: Riyadh modernist exterior at golden hour</div>
+    </div>
+
+  </div>
+</body>
+</html>

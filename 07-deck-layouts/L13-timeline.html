@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>L13 — Production Timeline</title>
+<link rel="stylesheet" href="../01-tokens/tokens.css">
+<style>
+  /*
+    Layout L13 — Production timeline / pipeline.
+    Density earns its place: the diagram IS the information.
+    Single signal color marks the current phase or the critical path.
+  */
+
+  body {
+    margin: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-latin);
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.5);
+    transform-origin: center;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    position: relative;
+    overflow: hidden;
+    padding: var(--slide-edge-margin);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: var(--space-12);
+  }
+
+  .slide__heading {
+    font-family: var(--font-latin);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-latin-snug);
+    margin: 0;
+  }
+
+  .slide__timeline {
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .slide__phase {
+    padding: var(--space-8) var(--space-6);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    position: relative;
+  }
+
+  .slide__phase:last-child { border-right: none; }
+
+  .slide__phase[data-state="current"] {
+    border-top: 4px solid var(--color-signal);
+    margin-top: -4px;
+  }
+
+  .slide__phase-label {
+    font-family: var(--font-latin-mono);
+    font-size: var(--font-size-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-fg-muted);
+  }
+
+  .slide__phase[data-state="current"] .slide__phase-label {
+    color: var(--color-signal);
+  }
+
+  .slide__phase-name {
+    font-family: var(--font-latin);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-latin-snug);
+    margin: 0;
+  }
+
+  .slide__phase-tasks {
+    list-style: none;
+    margin: var(--space-2) 0 0 0;
+    padding: 0;
+    color: var(--color-fg-muted);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-latin-normal);
+  }
+
+  .slide__phase-tasks li {
+    padding-left: 0;
+  }
+
+  .slide__phase-duration {
+    margin-top: auto;
+    padding-top: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: var(--font-size-caption);
+    color: var(--color-fg-subtle);
+  }
+
+  .slide__chrome {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    color: var(--color-fg-muted);
+    font-size: var(--font-size-caption);
+    font-family: var(--font-latin-mono);
+  }
+
+  .slide__chrome .center { text-align: center; }
+  .slide__chrome .right  { text-align: right; }
+
+  .posture-tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+  <div class="slide" data-context="house">
+    <span class="posture-tag">L13 · TIMELINE · density earns its place</span>
+
+    <h2 class="slide__heading">Production phases. <span style="color: var(--color-fg-muted); font-weight: 400;">10 weeks.</span></h2>
+
+    <div class="slide__timeline">
+      <div class="slide__phase" data-state="done">
+        <div class="slide__phase-label">Phase 1</div>
+        <h3 class="slide__phase-name">Pre-production</h3>
+        <ul class="slide__phase-tasks">
+          <li>Script lock</li>
+          <li>Casting</li>
+          <li>Location scout</li>
+          <li>Storyboard</li>
+        </ul>
+        <div class="slide__phase-duration">3 weeks  ·  done</div>
+      </div>
+
+      <div class="slide__phase" data-state="current">
+        <div class="slide__phase-label">Phase 2  · current</div>
+        <h3 class="slide__phase-name">Production</h3>
+        <ul class="slide__phase-tasks">
+          <li>Day 1–4 Cairo</li>
+          <li>Day 5–7 Riyadh</li>
+          <li>Pickups</li>
+        </ul>
+        <div class="slide__phase-duration">2 weeks  ·  W4–5</div>
+      </div>
+
+      <div class="slide__phase" data-state="upcoming">
+        <div class="slide__phase-label">Phase 3</div>
+        <h3 class="slide__phase-name">Post</h3>
+        <ul class="slide__phase-tasks">
+          <li>Offline cut</li>
+          <li>Score</li>
+          <li>Sound mix</li>
+          <li>Color</li>
+        </ul>
+        <div class="slide__phase-duration">3 weeks  ·  W6–8</div>
+      </div>
+
+      <div class="slide__phase" data-state="upcoming">
+        <div class="slide__phase-label">Phase 4</div>
+        <h3 class="slide__phase-name">Delivery</h3>
+        <ul class="slide__phase-tasks">
+          <li>Master grade</li>
+          <li>Format exports</li>
+          <li>Captions</li>
+        </ul>
+        <div class="slide__phase-duration">2 weeks  ·  W9–10</div>
+      </div>
+    </div>
+
+    <div class="slide__chrome">
+      <div>OGeez</div>
+      <div class="center">Attention, not volume.</div>
+      <div class="right">13 / 24</div>
+    </div>
+  </div>
+</body>
+</html>

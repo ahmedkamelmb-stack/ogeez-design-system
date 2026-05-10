@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>L11 — Bilingual Sibling Headline</title>
+<link rel="stylesheet" href="../01-tokens/tokens.css">
+<style>
+  /*
+    Layout L11 — Bilingual sibling headline.
+    Both languages at equal optical weight. Diamond ◆ as structural divider.
+    Used when the idea carries equally in both languages (rare).
+  */
+
+  body {
+    margin: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-latin);
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.5);
+    transform-origin: center;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    position: relative;
+    overflow: hidden;
+    padding: var(--slide-edge-margin);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide__bilingual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-12);
+    text-align: center;
+  }
+
+  .slide__en {
+    font-family: var(--font-latin);
+    font-size: var(--font-size-display);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-latin-tight);
+    letter-spacing: var(--tracking-display);
+    margin: 0;
+  }
+
+  .slide__divider {
+    width: 24px;
+    height: 24px;
+    background: var(--color-emphasis);
+    transform: rotate(45deg);
+  }
+
+  .slide__ar {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    font-size: 92px;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-arabic-tight);
+    margin: 0;
+  }
+
+  .slide__chrome {
+    position: absolute;
+    bottom: var(--slide-footer-margin);
+    left: var(--slide-edge-margin);
+    right: var(--slide-edge-margin);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    color: var(--color-fg-muted);
+    font-size: var(--font-size-caption);
+    font-family: var(--font-latin-mono);
+  }
+
+  .slide__chrome .center { text-align: center; }
+  .slide__chrome .right  { text-align: right; }
+
+  .posture-tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+  <div class="slide" data-context="house">
+
+    <span class="posture-tag">L11 · BILINGUAL SIBLING · equal optical weight</span>
+
+    <div class="slide__bilingual">
+      <h1 class="slide__en">Attention,<br>not volume.</h1>
+      <span class="slide__divider" aria-hidden="true"></span>
+      <h1 class="slide__ar">الانتباه،<br>مش الحجم.</h1>
+    </div>
+
+    <div class="slide__chrome">
+      <div>OGeez</div>
+      <div class="center">— manifesto, ¶4</div>
+      <div class="right">11 / 24</div>
+    </div>
+
+  </div>
+</body>
+</html>

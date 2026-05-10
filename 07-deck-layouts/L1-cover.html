@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>L1 — First-time Client Cover</title>
+<link rel="stylesheet" href="../01-tokens/tokens.css">
+<style>
+  /*
+    Layout L1 — First-time client cover.
+    Posture: client.status=first_time → 11-section template.
+    The cover carries: studio wordmark + brief title + client + date. Nothing else.
+    Air-first. One signal at most (defaults to zero).
+  */
+
+  body {
+    margin: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-latin);
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.5);
+    transform-origin: center;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    position: relative;
+    overflow: hidden;
+    padding: var(--slide-edge-margin);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .slide__chrome-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .slide__wordmark {
+    font-family: var(--font-latin);
+    font-weight: var(--font-weight-black);
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--color-fg);
+  }
+
+  .slide__center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-6);
+    max-width: 1400px;
+  }
+
+  .slide__eyebrow {
+    font-family: var(--font-latin-mono);
+    font-size: var(--font-size-caption);
+    color: var(--color-fg-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .slide__title {
+    font-family: var(--font-latin);
+    font-size: var(--font-size-display);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-latin-tight);
+    letter-spacing: var(--tracking-display);
+    margin: 0;
+    max-width: 1100px;
+  }
+
+  .slide__title .ar {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    display: block;
+    font-size: 92px;
+    line-height: var(--line-height-arabic-tight);
+    margin-top: var(--space-4);
+  }
+
+  .slide__chrome-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    color: var(--color-fg-muted);
+    font-size: var(--font-size-caption);
+  }
+
+  .slide__chrome-bottom > * { margin: 0; }
+  .slide__chrome-bottom .center { text-align: center; }
+  .slide__chrome-bottom .right  { text-align: right; }
+
+  /* Posture tag — invisible to the eye, machine-readable */
+  .posture-tag {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    font-family: var(--font-latin-mono);
+    font-size: 10px;
+    color: rgba(0,0,0,0.2);
+    letter-spacing: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="slide" data-context="house" data-posture="first-time">
+
+    <span class="posture-tag">L1 · COVER · client.status=first_time</span>
+
+    <div class="slide__chrome-top">
+      <div class="slide__wordmark">OGeez</div>
+    </div>
+
+    <div class="slide__center">
+      <div class="slide__eyebrow">For Bank Aljazira  ·  May 2026</div>
+      <h1 class="slide__title">
+        The category gets the speech.<br>
+        We don't.
+        <span class="ar">الخطاب لباقي القطاع. مش لنا.</span>
+      </h1>
+    </div>
+
+    <div class="slide__chrome-bottom">
+      <div>OGeez Studios  ·  Cairo + Riyadh</div>
+      <div class="center">Attention, not volume.</div>
+      <div class="right">10 May 2026  ·  Confidential</div>
+    </div>
+
+  </div>
+</body>
+</html>
