@@ -38,7 +38,7 @@ If you find yourself using two signals on a slide, **cut one**. If you find your
 
 ### Rule 2: Substrate is paper + ink + neutrals
 
-Default `house` background = `#FAF7F2` (paper, warm white). Default body = `#0A0A0A` (ink, near-black). Most of every page is substrate. Margins are generous (96px on a 1920px deck). Whitespace is load-bearing.
+Default `house` background = `#0A0A0A` (ink, near-black). Default body = `#FAF7F2` (paper, warm white). Most of every page is substrate. Margins are generous (96px on a 1920px deck). Whitespace is load-bearing.
 
 **Do not** introduce gradient backgrounds, decorative borders, corner stamps, or chrome ornaments. The grid is invisible; the rhythm is the design.
 
