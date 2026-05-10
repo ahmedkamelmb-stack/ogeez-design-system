@@ -1,155 +1,200 @@
-# OGeeZ Studios — Design System
+# OGeez V3 — Design System
 
-**v0.1.0** · 2026-04-27 · Designed for Claude Design ingest
+**v3.0.0** · 2026-05-10 · The restraint-aligned reset
+
+---
+
+## What's different in V3
+
+V3 keeps V2's architecture and operationalizes the v5 brand reset on top of it. The V2 system was technically excellent — three-layer tokens, 14 deck layouts, 60+ icons, 8 data-viz primitives, motion as first-class, bilingual parity, accessibility, parametric mouth. **All of that carries forward.** What V3 changes is the *register*.
+
+| V2 (2026-05-09) | V3 (2026-05-10) |
+|---|---|
+| Positioning: *filmmaker-led commercial studio with festival credibility and a bilingual bench* | **Attention, not volume.** Manifesto bookends: *في مستوى. / عند المستوى، أو مرفوض.* |
+| Tension: corporate precision + punk-zine energy | Restraint over costume; *look less designed, not more* |
+| House palette: Electric Green / Ultramarine / Epink at full strength | Fresh designer derivation pending — placeholders in tokens; designer brief in `docs/visual-guidelines-v3.md` |
+| Mouth: "the mouth speaks now" — central V2 deliverable | Mouth library kept (technical asset), deployed *sparingly*, never as headline |
+| Anti-AI crafted texture layer (grain/tape/paper/scanline) | Texture is opt-in, never default; surface should be *evidence the work was made*, not advertising for the studio |
+| Voice doc: 16k+ chars (`voice-guidelines-v5.md`) | Thin pointer (~370 words) at `docs/voice.md` citing the manifesto by paragraph |
+| "Controlled chaos" voice rule | Removed — contradicts v5 restraint posture |
+| Tagline: *A straight face that makes you laugh.* | Sub-line, retained inside voice repertoire; primary positioning is **Attention, not volume.** |
+| Mouth easing names: `shout` / `bite` / `pull` | Renamed: `pull` / `hold` / `lift`. V2 names aliased for component compatibility. |
+
+V2's contradictions with the brand reset are reconciled by promoting the manifesto to the spine and demoting the visual costume to its proper place. The architecture survives intact.
 
 ---
 
 ## Read this first
 
-OGeeZ Studios is a filmmaker-led commercial studio with festival credibility and a bilingual bench. Cairo + Riyadh. The visual identity is **loud, vibrant, expressive — and deliberately shape-shifting**. Corporate-precision and punk-zine in the same envelope. The tension is the product.
+The system has three documents that come before any token, component, or asset:
 
-### The single most important rule
+1. **`docs/manifesto.md`** — the brand's spine. Bilingual sibling. Read it once, in full.
+2. **`docs/voice.md`** — operational pointer. ~370 words. Cites the manifesto by paragraph.
+3. **`docs/visual-guidelines-v3.md`** — the visual canon. Constants/variables split.
 
-**On-camera palette ≠ house palette.**
-
-The Electric-Green / Ultramarine / Epink system is **deck wrapping** — used for OGeeZ's own decks, social, stationery, recruiting, internal docs. It is NOT the on-camera color of OGeeZ film/commercial work for clients.
-
-On-camera color is **client-tier-deterministic**:
-
-| Tier | When | Token namespace |
-|---|---|---|
-| `oncamera.corporate` | Banks, government, B2B, institutional | Restrained, black + warm accent |
-| `oncamera.consumer` | F&B, telco, retail, consumer pop | Saturation up, pattern-forward |
-| `oncamera.heritage` | National days, anniversaries | Earth tones, art-direction-heavy |
-
-Pick the right context BEFORE generating any artifact. The tokens.json `context` field is the switch — set it explicitly. **Default is `house`.**
+Everything below those three is implementation.
 
 ---
 
-## How Claude Design uses this repo
+## Three-layer architecture (unchanged from V2)
 
-1. Read `tokens.json` — single source of truth for colors, type, spacing, mouth library, layouts.
-2. Read `docs/visual-guidelines.md` — full visual canon. Read `docs/brand-voice-guidelines.md` for tone.
-3. When generating: pick the **context** first (`house` / `oncamera.corporate` / `oncamera.consumer` / `oncamera.heritage`), then resolve tokens.
-4. For deck/social/stationery artifacts: clone from `components/` HTML primitives. They demonstrate token usage in working markup.
-5. Use the master assets in `assets/` — never redraw or AI-regenerate the logo or mouth.
+```
+┌──────────────────────────────────────────────────────┐
+│  LAYER 3 — APPLICATIONS                              │
+│  (decks, social, stationery, web, motion stings,     │
+│   production docs, festival bumpers, client skins)   │
+├──────────────────────────────────────────────────────┤
+│  LAYER 2 — COMPONENTS                                │
+│  (parametric mouth SVG, type primitives, layout      │
+│   primitives, icon system, motion primitives,        │
+│   data-viz primitives, optional texture overlays)    │
+├──────────────────────────────────────────────────────┤
+│  LAYER 1 — TOKENS                                    │
+│  (color, type, spacing, motion, radius, elevation,   │
+│   context-skin, sub-brand-internal, accessibility)   │
+└──────────────────────────────────────────────────────┘
+```
+
+Lower layers stable. Upper layers move.
 
 ---
 
-## Brand naming (canonical)
+## The 6 contexts
+
+Pick the context BEFORE generating any artifact. The `data-context` attribute is the switch.
+
+| Context              | Use for                                                                                                                | Visual signature                                                                                                               |     |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | --- |
+| `house` (default)    | OGeez-self decks, social, stationery, recruiting, internal, web                                                        | Restraint palette (designer-derived, pending).                                                                                 |     |
+| `house-dark`         | Dark-grounded house surfaces — late-night reads, cinema-exhibitor                                                      | Inverted, same restraint logic                                                                                                 |     |
+| `film`               | OGeez-as-filmmaker — Mabeen, Milliona, الشلة الأصلية, festival, theatrical. Surfaces under the *OGeez Presents* frame. | Black ground, white type, single accent at sting only. Austere. Per-film artwork bespoke under fixed wordmark (A24-precedent). |     |
+| `oncamera-corporate` | Banks, government, B2B, institutional                                                                                  | Restrained black + warm taupe accent                                                                                           |     |
+| `oncamera-consumer`  | F&B, telco, retail, consumer pop                                                                                       | Saturation up; client palette imported                                                                                         |     |
+| `oncamera-heritage`  | National days, anniversaries, cultural                                                                                 | Earth tones; period-accurate                                                                                                   |     |
+| `house-print`        | Print-bound (offset, uncoated, embroidery)                                                                             | CMYK + Pantone calibrated against final designer brief                                                                         |     |
+
+Default: `house`. On-camera palette is not the house palette.
+
+---
+
+## The mouth library — kept, demoted
+
+V2 made the mouth its central deliverable. V3 demotes it to a discipline mark used in moments where personality is invited (recruiting, internal, sign-offs, stickers) — never as headline or identifier of the studio's tone.
+
+Technical asset preserved: parametric SVG at `assets/mouth/parametric.svg`. 12 lip colors × 5 treatments × 6 motion states = 360 valid variants from one source. **The technical capability stays; the deployment posture changes.** Fixed accents (magenta tooth, red tongue, white teeth, black void, black airplane) NEVER change.
+
+The wordmark — not the mouth — is the public face of the studio.
+
+---
+
+## Brand naming
 
 | Surface | Form |
 |---|---|
-| English written form (default) | **OGeeZ Studios** |
+| English written form (default) | **OGeez Studios** |
 | Spoken / casual | OGeez |
-| Legal LLC mark | OGz Studios LLC |
-| Arabic short | الشلة الأصلية |
-| Arabic full legal | شركة الشلة الأصلية للانتاج الفني |
+| Legal LLC mark | OGZ Studios LLC |
+| Arabic written form | أوچييز ستوديوز |
 | Saudi CR | 1010891013 |
 
-Same registered company in both English and Arabic. Not a sister brand.
+---
+
+## Two postures (unchanged from V2)
+
+Selected by `client.status`:
+
+| `client.status = first_time` | `client.status = repeat` |
+|---|---|
+| 11-section template, sections 1–3 (About / Clients / Partners) compressed to a 3-line deck *footer* | **Idea-first.** Slide 1 = idea. Slide 2 = craft spine. Slide 3 = deliverables. Credentials = 3-line signature at close. |
+
+Layout L10 (idea-first opener) handles repeat-client posture; layout L1 (cover) handles first-time.
 
 ---
 
 ## Repo structure
 
 ```
-ogeez-design-system/
-├── README.md                          ← you are here
-├── BRIEF.md                           ← 1-page hand-off for Claude Design
-├── tokens.json                        ← machine-readable design tokens
-├── tokens.css                         ← CSS variable mirror
+ogeez-design-system-v3/
+├── README.md                       ← you are here
+├── BRIEF.md                        ← 1-page distillation
+├── CLAUDE_DESIGN_PROMPT.md         ← paste-first file for Claude Design
 ├── CHANGELOG.md
-├── VALIDATION.md                      ← 4-artifact test set for v0.1
+├── LICENSE.md
+├── VALIDATION.md
+├── package.json
+├── .gitignore
+├── tokens.css
+├── tokens.js
+├── tokens/
+│   ├── primitives.json
+│   ├── semantic.json
+│   ├── motion.json
+│   ├── grain.json
+│   └── context-overlays.json
 ├── docs/
-│   ├── visual-guidelines.md           ← full visual canon (v2.0)
-│   ├── brand-voice-guidelines.md      ← voice & tone (v4)
-│   └── on-camera-palettes.md          ← three client-tier specs
+│   ├── manifesto.md                ← THE SPINE
+│   ├── voice.md                    ← operational pointer
+│   ├── register-matrix.md          ← brief-archetype → craft-move table
+│   ├── positioning.md              ← *Attention, not volume.* explainer
+│   ├── visual-guidelines-v3.md     ← V3 visual canon
+│   ├── motion-guidelines.md
+│   ├── film-context.md             ← *OGeez Presents* surface
+│   ├── bilingual-typography.md
+│   ├── icon-system.md
+│   ├── data-viz.md
+│   ├── claude-design-ingest.md
+│   ├── accessibility.md
+│   ├── sub-brands.md               ← Internal labels invisible to clients
+│   └── SOURCES.md
 ├── assets/
-│   ├── logo/                          ← master EPS + PDF + PNG
-│   ├── mouth/                         ← 12 color variants (PDF + EPS + PNG)
-│   ├── fonts/Modern Era Family/       ← bundled font files
-│   └── applications/                  ← reference PDFs (cards, letterhead, deck, sig)
-├── components/                        ← HTML primitives (Claude Design clones these)
-│   ├── deck-cover.html                ← L1
-│   ├── deck-headline-body.html        ← L2
-│   ├── deck-separator-mouth-bleed.html ← L4
-│   ├── deck-separator-shadow.html     ← L6
-│   ├── deck-data-pastel.html          ← L5
-│   ├── social-square.html             ← IG post
-│   ├── social-co-branding.html        ← OGZ × Partner
-│   ├── business-card.html             ← stationery
-│   └── email-signature.html           ← banner format
-├── examples/                          ← rendered QA samples
-└── scripts/
-    ├── copy-master-assets.ps1         ← Windows: populate assets/ from ../Brand Identity/
-    └── copy-master-assets.sh          ← macOS/Linux equivalent
+│   ├── README.md
+│   └── mouth/
+│       └── parametric.svg
+└── components/
+    ├── README.md
+    ├── index.html
+    ├── deck-idea-first.html
+    └── film-bumper-festival.html
 ```
 
 ---
 
-## Setup (run once)
+## How Claude Design uses this repo
 
-After cloning or copying this folder, populate the binary assets from the master Brand Identity kit:
-
-**Windows (PowerShell):**
-```powershell
-cd "C:\Users\Kamel\Documents\Brain\agency\OGeeZ Design System\ogeez-design-system"
-.\scripts\copy-master-assets.ps1
-```
-
-**macOS / Linux:**
-```bash
-cd "ogeez-design-system"
-bash scripts/copy-master-assets.sh
-```
-
-The script copies logos, mouths, fonts, and reference applications from `../Brand Identity/` into `./assets/`. Re-run if the master kit gets updated.
+1. **Read `docs/manifesto.md` first.** Everything else is downstream.
+2. **Read `docs/voice.md`.** Operational rules, ~370 words.
+3. **Read `tokens/` JSON files.** Primitives separate from semantic.
+4. **Read `docs/visual-guidelines-v3.md`.** Visual canon.
+5. **Read `docs/motion-guidelines.md`.** Held, observational. Not swagger.
+6. **When generating, pick `data-context` first.** Default `house`.
+7. **For motion artifacts:** explicit `data-state`, `data-treatment`. Default `state=resting`, `treatment=flat`.
+8. **For deck artifacts:** pick the posture by `client.status`.
+9. **For grain/texture:** never default. Opt-in only when it's *evidence the work was made*.
 
 ---
 
-## Quick do's & don'ts
+## Do's & don'ts (V3)
 
 **Do**
-- Use the master files. They exist. Don't redraw.
-- Treat the mouth as parametric: 12 colors × 5 treatment modes.
-- Pair Arabic and English at equal optical weight (not equal point size).
-- Hold the corporate-precision + punk-zine tension. Don't smooth it.
-- Tune chart palettes to the slide background, not to a fixed deck palette.
-- Set headlines big.
-- Light photography in single saturated colors, not gels-everywhere.
+- Treat the manifesto as the spine. Cite it by paragraph in every voice decision.
+- Hold the seam between commercial OGeez and filmmaker OGeez. The *OGeez Presents* surface (`docs/film-context.md`) is where the filmmaker register lives.
+- Match Arabic and English at equal optical weight. Diamond ◆ is the bilingual structural divider.
+- Treat the mouth as a technical parametric system; deploy sparingly.
+- Pick the context (`data-context`) before generating anything.
+- Pick the posture (`client.status`) for any deck.
+- Use motion deliberately — every motion uses a token, never an arbitrary duration or curve.
+- Set headlines big where they earn it; leave the page mostly empty by default.
+- Apply the bar test: *would this read at the bar where a Cairo film sits next to a film made anywhere else?*
 
 **Don't**
+- Use *filmmaker-led commercial studio with festival credibility and a bilingual bench* — retired.
+- Use *full-service*, *content partner*, *end-to-end*, *award-winning* as opener, named-canon references.
 - Tint primary colors to pastels.
 - Skew, stretch, drop-shadow, or re-color the lockup.
-- Redraw the mouth — color-shift the master asset, don't regenerate.
+- Use the mouth as a headline mark.
 - Set Arabic smaller than English, or as translation underneath.
 - Apply the house palette to client on-camera work.
-- Generate mood-state mouths (Action!/Standby/Halloween) via prompt — they are rendered images only, no source files exist.
-- Paint over the brand's strangeness. The strangeness is the asset.
-
----
-
-## Open questions before v1.0
-
-1. **Master swatch.** HEX values throughout are read off-screen from the condensed manual + master kit. For final print/environmental: request CMYK + Pantone from Chubby Studio (chubbystudio.com).
-2. **Motion guidelines.** Not in master kit. Brief Ahmed before designing intros, animated lockups, or lower-thirds.
-3. **Digital / responsive social spec.** PSD IG template exists; no documented spec for stories, reels, vertical formats, web. Build from observed pattern.
-
----
-
-## Validation before shipping
-
-Run the 4-artifact test in `VALIDATION.md` after any tokens edit:
-1. House recruiting one-pager — must hit Electric Green at full strength
-2. Bank Aljazira (corporate-tier) deck cover — must be muted black + restrained accent
-3. Drinkle (consumer-tier) social tile — must be saturated, pattern-forward
-4. Bilingual headline (Arabic + English) — must pair at equal optical weight
-
-Fix tokens or README if any test fails — never patch at the prompt layer.
-
----
-
-*Master Brand Identity kit lives in `../Brand Identity/`. This repo is the tokenized, machine-readable form for Claude Design ingest. Voice & tone canon lives in `docs/brand-voice-guidelines.md`. Any conflict between the docs and the master kit: master kit wins on visuals, voice docs win on copy.*
-
-**Single most important rule: don't smooth the tension. It's the asset.**
+- Bolt grain onto commercial work to fake "made by hand."
+- Use the film context (`[data-context="film"]`) for commercial work.
+- Generate per-film bumpers as one-offs.
+- Ship motion without motion-reduce fallbacks.
